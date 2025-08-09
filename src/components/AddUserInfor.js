@@ -2,9 +2,9 @@ import React from "react";
 
 class AddUserInfor extends React.Component {
     state = {
-        name: 'Duy',
+        name: '',
         address: 'HN',
-        age: 21
+        age: ''
     }
 
     handleClick = (event) => {
@@ -23,9 +23,20 @@ class AddUserInfor extends React.Component {
         })
     }
 
+    handOnChangeAge = (event) => {
+        this.setState({
+            age: event.target.value
+        })
+    }
+
     handleOnSubmit = (event) => {
         event.preventDefault();
         console.log(this.state)
+        this.props.handleAddNewUser({
+            id: Math.floor((Math.random()*100) + 1) + '-random',
+            name: this.state.name,
+            age: this.state.age
+        })
     }
 
     render(){
@@ -39,6 +50,12 @@ class AddUserInfor extends React.Component {
                     value={this.state.name}
                     type="text"
                     onChange={(event) => this.handOnChangeInput(event)}
+                    />
+                    <label>Your age:</label>
+                    <input 
+                    value={this.state.age}
+                    type="text"
+                    onChange={(event) => this.handOnChangeAge(event)}
                     />
                     <button>submit</button>
                 </form>

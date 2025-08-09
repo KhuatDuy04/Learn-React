@@ -15,13 +15,20 @@ class MyComponent extends React.Component {
         ]
     }
 
+    handleAddNewUser = (userObj) => {
+        console.log('>>>check data', userObj);
+        this.setState({
+            listUsers: [userObj,...this.state.listUsers]
+        })
+    }
+
     //JSX
     render(){
         return (
             <div>
-                <AddUserInfor/>
+                <AddUserInfor handleAddNewUser={this.handleAddNewUser} />
                 <br/> <br/>
-                <DisplayInfor listUsers={this.state.listUsers} users={this.state.listUsers}/>
+                <DisplayInfor listUsers={this.state.listUsers}/>
             </div>
         );
     }
