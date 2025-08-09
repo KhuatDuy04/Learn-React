@@ -25,11 +25,11 @@ class MyComponent extends React.Component {
     //JSX
     render(){
         return (
-            <div>
+            <>
                 <AddUserInfor handleAddNewUser={this.handleAddNewUser} />
                 <br/> <br/>
                 <DisplayInfor listUsers={this.state.listUsers}/>
-            </div>
+            </>
         );
     }
 }

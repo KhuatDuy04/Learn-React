@@ -41,7 +41,7 @@ class AddUserInfor extends React.Component {
 
     render(){
         return (
-            <div>
+            <>
                 my name is {this.state.name} and I'm from {this.state.address}
                 <button onClick={(event) => {this.handleClick(event)}}>click me</button>
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
@@ -59,7 +59,7 @@ class AddUserInfor extends React.Component {
                     />
                     <button>submit</button>
                 </form>
-            </div>
+            </>
         )
     }
 }
