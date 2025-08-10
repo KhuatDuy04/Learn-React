@@ -33,7 +33,7 @@ import logo from '../logo.svg';
 const DisplayInfor = (props) => {
     const {listUsers} = props;
     // DRY don't repeat yourself
-    //props => viết tắt properties
+    //props => viết tắt propertiesisShowHideListUser
 
     const [isShowHideListUser, setShowHideListUser] = useState(true)
 
