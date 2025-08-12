@@ -1,5 +1,6 @@
 import { Menu, MenuItem, ProSidebar, SubMenu, SidebarHeader, SidebarContent, SidebarFooter } from "react-pro-sidebar";
 import { FaTachometerAlt, FaGithub, FaIndent, FaReact } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
     return (
@@ -18,12 +19,12 @@ const SideBar = () => {
 
             <SidebarContent>
                 <Menu iconShape="circle">
-                    <MenuItem icon={<FaTachometerAlt />}>Dashboard</MenuItem>
+                    <MenuItem icon={<FaTachometerAlt />}>Dashboard <Link to={'/admins'}/></MenuItem>
                 </Menu>
 
                 <Menu iconShape="circle">
                     <SubMenu title="Features" icon={<FaIndent />}>
-                        <MenuItem>Quản lý Users</MenuItem>
+                        <MenuItem>Quản lý Users <Link to={'/admins/manage-users'}/> </MenuItem>
                         <MenuItem>Quản lý Bài Quiz</MenuItem>
                         <MenuItem>Quản lý câu hỏi</MenuItem>
                     </SubMenu>
